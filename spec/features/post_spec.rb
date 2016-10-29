@@ -15,6 +15,9 @@ describe 'navigate' do
 
   describe 'creation' do
     before do 
+      # this will work after adding Warden helpers to rails_helper.rb
+      user = @user = User.create(email: "user@example.com",  password: "foobar", password_confirmation: "foobar", first_name: "User", last_name: "Example")
+      login_as(user, :scop => :user)
       visit new_post_path
     end
     it 'has a new form that can be reached' do
@@ -26,7 +29,16 @@ describe 'navigate' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "This is the rationale"
       click_on 'Save'
+
       expect(page).to have_content("This is the rationale")
+    end
+
+    it 'will have a user associated with it' do
+      fill_in 'post[date]', with: Date.today
+      fill_in 'post[rationale]', with: "User Association"
+      click_on 'Save'
+
+      expect(User.last.posts.last.rationale).to eq("User Association")
     end
   end
 end
