@@ -4,8 +4,8 @@ describe 'navigate' do
   
   before  do 
     # this will work after adding Warden helpers to rails_helper.rb
-    user = @user = User.create(email: "user@example.com",  password: "foobar", password_confirmation: "foobar", first_name: "User", last_name: "Example")
-    login_as(user, :scop => :user)
+    @user = User.create(first_name: "User", last_name: "Example", email: "user@example.com",  password: "foobar", password_confirmation: "foobar")
+    login_as(@user, :scope => :user)
   end
  
   describe 'index' do
@@ -21,8 +21,8 @@ describe 'navigate' do
     end
 
     it 'has a list of posts' do 
-      post1 = Post.create(date: Date.today, rationale: "Post1")
-      post2 = Post.create(date: Date.today, rationale: "Post2")
+      post1 = Post.create(date: Date.today, rationale: "Post1", user_id: @user.id)
+      post2 = Post.create(date: Date.today, rationale: "Post2", user_id: @user.id)
       visit posts_path  
       expect(page).to have_content(/Post1|Post2/)
     end
