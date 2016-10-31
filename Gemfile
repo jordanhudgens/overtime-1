@@ -21,6 +21,7 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.7'
+  gem 'guard-rspec', require: false
 end
 
 group :development do
