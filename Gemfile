@@ -12,7 +12,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem "gritter", "1.2.0"
-
+gem 'administrate', github: 'greetpoint/administrate', branch: 'rails5'
+gem 'bourbon'
 
 group :development, :test do
   gem 'byebug', platform: :mri
