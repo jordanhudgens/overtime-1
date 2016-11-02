@@ -14,7 +14,7 @@ FactoryGirl.define do
   factory :admin_user, class: "AdminUser" do
     first_name "Admin"
     last_name "Example"
-    email {generate e:mail}
+    email {generate :email}
     password "foobar"
     password_confirmation "foobar"
   end
