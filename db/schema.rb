@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161029222544) do
+ActiveRecord::Schema.define(version: 20161102133648) do
 
   create_table "posts", force: :cascade do |t|
     t.date     "date"
     t.text     "rationale"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "user_id"
+    t.integer  "status",     default: 0
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
