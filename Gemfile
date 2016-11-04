@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -14,6 +13,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem "gritter", "1.2.0"
 gem 'administrate', github: 'greetpoint/administrate', branch: 'rails5'
 gem 'bourbon'
+gem 'pundit', '~> 1.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri
