@@ -1,6 +1,6 @@
 
-@user = User.create!(first_name: "User", last_name: "Example", email: "user@example.com",  password: "passpass", password_confirmation: "passpass")
-AdminUser.create!(first_name: "Admin", last_name: "User", email: "admin@example.com",  password: "passpass", password_confirmation: "passpass")
+@user = User.create!(first_name: "User", last_name: "Example", email: "user@example.com",  password: "foobar", password_confirmation: "foobar")
+AdminUser.create!(first_name: "Admin", last_name: "User", email: "admin@example.com",  password: "foobar", password_confirmation: "foobar")
 
 puts "*******************************"
 

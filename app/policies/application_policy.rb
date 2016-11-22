@@ -34,7 +34,7 @@ class ApplicationPolicy
     false
   end
 
-  def admin_type
+  def admin_types
     ['AdminUser']
   end
 
